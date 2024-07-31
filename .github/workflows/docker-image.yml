@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
     - name: docker build java
-      run: docker build --file demoPod/Dockerfile demoPod --tag darkmtrance/demopod:$(date +%s)
+      run: docker build --file demoPod/Dockerfile demoPod --tag darkmtrance/demopod:v1
     - name: docker push
       run: |
-        docker push darkmtrance/demopod:$(date +%s)
+        docker push darkmtrance/demopod:v1
