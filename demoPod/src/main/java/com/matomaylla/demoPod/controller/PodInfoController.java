@@ -10,6 +10,7 @@ public class PodInfoController {
     private final String podName;
     private final String instanceId;
  
+    
     public PodInfoController(@Value("${POD_NAME:Unknown}") String podName) {
         this.podName = podName;
         this.instanceId = UUID.randomUUID().toString();
