@@ -14,14 +14,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      name: Checkout repository
+      
     - name: docker login
-      env:
-        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      uses: docker/login-action@v3
+      with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
     - name: docker build java
-      run: docker build ./demoPod --file Dockerfile --tag darkmtrance/demoPod:$(date +%s)
+      run: docker build --file demoPod/Dockerfile demoPod --tag darkmtrance/demopod:v1
     - name: docker push
       run: |
-        docker push darkmtrance/demoPod:$(date +%s)
+        docker push darkmtrance/demopod:v1
