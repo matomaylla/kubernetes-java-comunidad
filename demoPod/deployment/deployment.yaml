@@ -23,6 +23,11 @@ spec:
       containers:
       - name: demopod-app
         image: darkmtrance/demopod:v1
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -32,4 +37,4 @@ spec:
             cpu: "10m"
           limits:
             memory: "256Mi"
-            cpu: "500m"
+            cpu: "500m" 
