@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS mydb;
+USE mydb;
+
+CREATE TABLE IF NOT EXISTS user (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+INSERT INTO user (name) VALUES ('Indra!!!');
+INSERT INTO user (name) VALUES ('Indra Latam!!!');

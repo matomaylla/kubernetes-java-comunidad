@@ -3,7 +3,7 @@
 ## Prerrequisitos
 - Docker
 
-## Uso
+## Uso docker
 
 1. Habilitar nginx:
     ```sh
@@ -12,9 +12,22 @@
     curl localhost:8080
     ```
 
-2. Agregamos un archivo al contenedor
+2. Agregamos un archivo al contenedor:
    ```sh
    echo 'Hola Indra!!!' >> index.html
 
-   docker run -v index.html:/usr/share/nginx/html/index.html -p 8080:80 -d nginx
+   docker run -v $(pwd)/index.html:/usr/share/nginx/html/index.html -p 8080:80 -d nginx
    ``` 
+
+3. Construimos imagen docker:
+    ```sh
+    docker build -t darkmtrance/hola-docker:indra .
+    ```
+
+4. Subir imagen a docker hub:
+    ```sh
+    docker push darkmtrance/hola-docker:indra
+    ```
+
+## Uso docker compose
+

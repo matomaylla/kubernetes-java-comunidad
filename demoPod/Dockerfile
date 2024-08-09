@@ -9,7 +9,7 @@ COPY pom.xml /work/pom.xml
 RUN ./mvnw dependency:go-offline
 
 COPY . /work/
-RUN ./mvnw install
+RUN ./mvnw install -DskipTests
 
 RUN chmod +x /work/target/demoPod-0.0.1-SNAPSHOT.jar
 

@@ -20,4 +20,9 @@ public class PodInfoController {
     public String getPodInfo() {
         return String.format("Pod Name: %s, Instance ID: %s", podName, instanceId);
     }
+
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello, World!";
+    }
 }
