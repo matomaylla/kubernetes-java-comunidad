@@ -1,6 +1,8 @@
 package com.matomaylla.demoPod.controller;
 import java.util.UUID;
 
+import com.matomaylla.demoPod.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class PodInfoController {
     private final String podName;
     private final String instanceId;
+
+    @Autowired
+    private UserService userService;
  
     
     public PodInfoController(@Value("${POD_NAME:Unknown}") String podName) {
@@ -23,6 +28,7 @@ public class PodInfoController {
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "Hello, World!";
+        String name = userService.obtenerNombre();
+        return "Hello,"+name;
     }
 }
