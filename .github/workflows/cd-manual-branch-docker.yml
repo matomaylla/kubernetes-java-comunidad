@@ -1,11 +1,8 @@
-name: Docker Compose CD
+name: Docker Compose CD Manual
 
 on:
-  workflow_run:
-    workflows: ["Docker Image CI"]
-    types:
-      - completed 
-
+  workflow_dispatch:
+      
 jobs:
 
   build:
