@@ -11,7 +11,7 @@ services:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   app:
-    build: ./demoPod
+    image: darkmtrance/demopod:v2
     container_name: demoPod
     deploy:
       restart_policy:

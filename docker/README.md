@@ -31,3 +31,7 @@
 
 ## Uso docker compose
 
+1. Ejecutar:
+    ```sh
+    docker compose up -d
+    ```
