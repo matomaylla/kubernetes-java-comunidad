@@ -3,6 +3,7 @@ name: Docker Compose CD
 on:
   workflow_run:
     workflows: ["Docker Image CI"]
+    branches: [ "docker" ]
     types:
       - completed 
 
