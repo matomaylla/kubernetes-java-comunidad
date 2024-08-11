@@ -64,6 +64,14 @@ Instalar el binario de [kind](https://kind.sigs.k8s.io/)
     kubectl create namespace indra
     ```
 
+## Secrets
+
+1. Crear secrets [documentación](https://kubernetes.io/docs/concepts/configuration/secret/)
+    ```sh
+    kubectl -n indra create secret generic app-secret --from-literal=SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/mydb --from-literal=SPRING_DATASOURCE_USERNAME=root
+    --from-literal=SPRING_DATASOURCE_PASSWORD=root
+    ```
+
 ## Deployments
 
 1. Crear deployment [documentación](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
