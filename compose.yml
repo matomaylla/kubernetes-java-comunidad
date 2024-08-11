@@ -13,6 +13,7 @@ services:
   app:
     image: darkmtrance/demopod:v2
     container_name: demoPod
+    pull_policy: always
     deploy:
       restart_policy:
         condition: on-failure
