@@ -36,6 +36,27 @@ Instalar el binario de [kind](https://kind.sigs.k8s.io/)
     kind create cluster --image kindest/node:v1.23.5
     ```
 
+2. Ver los servicios del master:
+    ```sh
+    kubectl get po -A
+    kubectl cluster-info
+    ```
+
+3. Obtener el contexto
+    ```sh
+    kubectl config get-contexts
+    ```
+
+4. Setear el contexto donde se va a trabajar
+    ```sh
+    kubectl config set-context <nombre del contexto>
+    ```
+
+5. Ver los comandos
+    ```sh
+    kubectl -h
+    ```
+
 ## Namespace
 
 1. Crear namespace [documentación](https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/)
