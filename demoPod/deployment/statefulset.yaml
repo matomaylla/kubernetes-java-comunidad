@@ -20,14 +20,19 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "root"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-root-pass
+              key: MYSQL_ROOT_PASSWORD
         volumeMounts:
         - name: db-storage
           mountPath: /var/lib/mysql
         - name: init-script
-          mountPath: /docker-entrypoint-initdb.d/init.sql
-          subPath: init.sql
+          mountPath: /docker-entrypoint-initdb.d
       volumes:
       - name: db-storage
         persistentVolumeClaim:
           claimName: mysql-pvc
+      - name: init-script
+        configMap:
+          name: mysql-init-script
