@@ -1,0 +1,23 @@
+name: Docker Compose CD Manual
+
+on:
+  workflow_dispatch:
+    branches:
+      - docker
+      
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v4
+      name: Checkout repository
+      
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build and start services
+      run: |
+        docker compose up -d

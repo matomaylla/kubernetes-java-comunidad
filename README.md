@@ -7,7 +7,7 @@ Este proyecto tiene como objetivo conocer el orquestador de contenedores Kuberne
 - Java 17 o superior
 - Maven 3.6.0 o superior
 - Docker
-- Kubernetes (Minikube o cualquier otra distribución)
+- Kubernetes (Minikube, kind o cualquier otra distribución)
 
 ## Instalación
 1. Clona el repositorio:
