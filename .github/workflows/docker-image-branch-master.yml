@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
     - name: docker build
-      run: docker build --file docker/Dockerfile docker --tag darkmtrance/hola-docker:indra3
+      run: docker build --file docker/Dockerfile docker --tag darkmtrance/hola-docker:indra4
     - name: docker push
       run: |
-        docker push darkmtrance/hola-docker:indra3
+        docker push darkmtrance/hola-docker:indra4
