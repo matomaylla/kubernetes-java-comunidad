@@ -70,6 +70,8 @@ Instalar el binario de [kind](https://kind.sigs.k8s.io/)
     ```sh
     kubectl -n indra create secret generic app-secret --from-literal=SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/mydb --from-literal=SPRING_DATASOURCE_USERNAME=root
     --from-literal=SPRING_DATASOURCE_PASSWORD=root
+
+    kubectl -n indra create secret generic mysql-root-pass --from-literal=MYSQL_ROOT_PASSWORD=root
     ```
 
 ## Deployments
